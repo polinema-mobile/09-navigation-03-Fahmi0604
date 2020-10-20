@@ -54,13 +54,6 @@ public class ScoreFragment extends Fragment {
 			public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
 				GoalScorer goalScorer = result.getParcelable(SCORER_KEY);
 				homeGoalScorerList.add(goalScorer);
-
-				StringBuilder iki = new StringBuilder();
-				for (int i=0; i<homeGoalScorerList.size(); i++){
-					iki.append(homeGoalScorerList.get(i).toString());
-				}
-
-				binding.textHomeScorer.setText(iki);
 			}
 		});
 
@@ -69,13 +62,6 @@ public class ScoreFragment extends Fragment {
 			public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
 				GoalScorer goalScorer = result.getParcelable(SCORER_KEY);
 				awayGoalScorerList.add(goalScorer);
-
-				StringBuilder iki = new StringBuilder();
-				for (int i=0; i<awayGoalScorerList.size(); i++){
-					iki.append(awayGoalScorerList.get(i).toString());
-				}
-
-				binding.textAwayScorer.setText(iki);
 			}
 		});
 
@@ -92,4 +78,19 @@ public class ScoreFragment extends Fragment {
 		Navigation.findNavController(view).navigate(action);
 	}
 
+	public String getDataHome(){
+		StringBuilder iki = new StringBuilder();
+		for (int i=0; i<homeGoalScorerList.size(); i++){
+			iki.append(homeGoalScorerList.get(i).toString());
+		}
+		return iki.toString();
+	}
+
+	public String getDataAway() {
+		StringBuilder iki = new StringBuilder();
+		for (int i=0; i<awayGoalScorerList.size(); i++){
+			iki.append(awayGoalScorerList.get(i).toString());
+		}
+		return iki.toString();
+	}
 }
