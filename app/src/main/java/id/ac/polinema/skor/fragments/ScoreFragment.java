@@ -57,7 +57,7 @@ public class ScoreFragment extends Fragment {
 
 				StringBuilder iki = new StringBuilder();
 				for (int i=0; i<homeGoalScorerList.size(); i++){
-					iki.append(homeGoalScorerList.get(0).toString());
+					iki.append(homeGoalScorerList.get(i).toString());
 				}
 
 				binding.textHomeScorer.setText(iki);
