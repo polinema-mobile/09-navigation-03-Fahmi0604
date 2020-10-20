@@ -69,6 +69,13 @@ public class ScoreFragment extends Fragment {
 			public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
 				GoalScorer goalScorer = result.getParcelable(SCORER_KEY);
 				awayGoalScorerList.add(goalScorer);
+
+				StringBuilder iki = new StringBuilder();
+				for (int i=0; i<awayGoalScorerList.size(); i++){
+					iki.append(awayGoalScorerList.get(i).toString());
+				}
+
+				binding.textAwayScorer.setText(iki);
 			}
 		});
 
